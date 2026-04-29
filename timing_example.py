@@ -11,7 +11,12 @@ def time_func(func):
 
 @time_func
 def dummy_func():
-    for i in range(100000000000):
+    for i in range(100000000):
         pass
 
+@time_func
+def add(a,b):
+    print(a+b)
+
 dummy_func()
+add(100000000,9009000)
