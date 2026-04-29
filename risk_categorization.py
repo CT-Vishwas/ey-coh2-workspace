@@ -1,13 +1,17 @@
+from dataclasses import dataclass
 
+security_logs = [
+    {"source_ip": "192.168.1.10", "event_type": "failed_login", "attempts": 3},
+    {"source_ip": "192.168.1.20", "event_type": "port_scan", "attempts": 4},
+    {"source_ip": "192.168.1.30", "event_type": "malware_alert", "attempts": 2},
+    {"source_ip": "192.168.1.10", "event_type": "failed_login", "attempts": 4}
+]
 
-# security_logs = [
-#     {"source_ip": "192.168.1.10", "event_type": "failed_login", "attempts": 3},
-#     {"source_ip": "192.168.1.20", "event_type": "port_scan", "attempts": 4},
-#     {"source_ip": "192.168.1.30", "event_type": "malware_alert", "attempts": 2},
-#     {"source_ip": "192.168.1.10", "event_type": "failed_login", "attempts": 4}
-# ]
-
-
+@dataclass
+class security_event:
+    source_ip : str
+    event_type: str
+    attempts : int
 
 # Risk weight mapping
 risk_weights = {
@@ -21,9 +25,10 @@ ip_risk_scores = {}
 
 # Calculate total risk score per IP
 for log in security_logs:
-    ip = log["source_ip"]
-    event = log["event_type"]
-    attempts = log["attempts"]
+    # ip = log["source_ip"]
+    # event = log["event_type"]
+    # attempts = log["attempts"]
+    security_event
 
     risk_score = attempts * risk_weights[event]
 
