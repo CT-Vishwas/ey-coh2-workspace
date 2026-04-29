@@ -26,7 +26,7 @@ def sub(a: int,b: int) -> int:
     """
     Subtracts two Numbers and returns its difference
     """
-    return a - b
+    return a - b 
 
 def mul(a,b):
     pass
