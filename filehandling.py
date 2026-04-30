@@ -1,5 +1,6 @@
 import  csv
 import os
+import datetime
 
 FILE_PATH = r"C:\Users\VishwasKSingh\Workspace\ey-coh2-workspace\data\house_prices_india.csv" 
 if not os.path.exists(FILE_PATH):
@@ -22,8 +23,9 @@ with open(FILE_PATH, "rt") as fh:
     avg = total/count
     print(f"Average price of all the houses is {avg: .4f}")
 
+current_datetime = datetime.datetime.now().strftime('%a %d %b %Y, %I:%M%p')
 with open("summary.log", "a+") as fw:
-    fw.writelines(f"Summary of '{fname}'\n")
+    fw.writelines(f"Summary of '{fname}' at {current_datetime} \n")
     fw.writelines("-"*20+"\n")
     fw.writelines(f"Number of Records: {count}\n")
     fw.writelines(f"Average price of Houses: {avg: .4f}\n")
