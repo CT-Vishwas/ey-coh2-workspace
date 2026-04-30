@@ -1,0 +1,19 @@
+---
+title: "Compliance Reporting Framework"
+author: "EY COH1 Team"
+top-level-division: chapter
+toc: true
+toc-own-page: true 
+listings-disable-line-numbers: true 
+listings-no-page-break: false
+book: true
+linkcolor: blue
+urlcolor: blue
+float-placement-figure: h
+header-includes:
+  - \usepackage{float}
+  - \makeatletter \def\@captype{figure} \makeatother
+  - \let\origfigure\figure
+  - \let\endorigfigure\endfigure
+  - \renewenvironment{figure}[1][2]{\origfigure[H]}
+---
